@@ -6,7 +6,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
@@ -88,7 +87,10 @@ export const pageQuery = graphql`
           featuredImage {
             childImageSharp {
               gatsbyImageData(width: 800)
+            }
+          }
         }
       }
     }
   }
+`
