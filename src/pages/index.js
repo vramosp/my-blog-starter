@@ -4,6 +4,8 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -46,6 +48,7 @@ const BlogIndex = ({ data, location }) => {
                   </h2>
                   <small>{post.frontmatter.date}</small>
                 </header>
+                <GatsbyImage image={getImage(post.frontmatter.featuredImage)} alt={post.frontmatter.title} />
                 <section>
                   <p
                     dangerouslySetInnerHTML={{
@@ -82,6 +85,9 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData(width: 800)
         }
       }
     }
