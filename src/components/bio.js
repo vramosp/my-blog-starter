@@ -44,7 +44,7 @@ const Bio = () => {
       />
       {author?.name && (
         <p>
-          What is going to happen?? by <strong>{author.name}</strong> {author?.summary || null}
+          What is going to happen?? What is going to happen?? What is going to happen?? What is going to happen?? What is going to happen?? What is going to happen?? <strong>{author.name}</strong> {author?.summary || null}
           {` `}
           <a href={`https://twitter.com/${social?.twitter || ``}`}>
             You should follow them on Twitter
